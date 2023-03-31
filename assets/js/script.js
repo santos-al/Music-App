@@ -13,6 +13,7 @@ $(function () {
         const inputValue = $('#input-value').val()
         youtubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${inputValue}l&key=${youtubeKey}`
 
+    // Begin Youtube API    
         $.ajax({
             url: youtubeURL,
             method: 'GET',

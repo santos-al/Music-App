@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sing Along</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    </head>
-        
-    <header>
-        <div>
-            Sing Along
-        </div>
-        <div>
-            <form>
-                <input type="text" placeholder="Search Track" name="Search">
-                <button id="search" type="submit">Submit</button>
-            </form>
-        </div>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sing Along</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
 
-        <body>
-            <div>
-                <label>Sing along with the lyrics!</label>
-                <textarea id="lyrics">Lyrics Here....</textarea>
-            </div>
+  <header>
+    <div id="app-header">Sing Along</div>
+    <div>
+      <form>
+        <input
+          id="input-value"
+          type="text"
+          placeholder="Search Track"
+          name="Search"
+        />
+        <button id="search" type="submit">Submit</button>
+      </form>
+    </div>
+  </header>
 
-            <div>
-                <button id="play-music" type="play">Play Music</button>
-            </div>
-    
-        </body>
+  <body>
+    <div id="left-sdie">
+      <label>Youtube Music Videos</label>
+      <div class="video-container">
+        <iframe
+          width="853"
+          height="480"
+          src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div>
+      <label id="right side">Sing along with the lyrics!</label>
+      <textarea id="lyrics">Lyrics Here....</textarea>
+    </div>
 
-    <footer>
+    <div>
+      <text>Artist:</text>
+      <text>Album:</text>
+      <text>Genre:</text>
+      <text>Release Date:</text>
+      <text>Producers</text>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 
-    </footer>
-
+  <footer></footer>
+  <footer></footer>
 </html>

@@ -6,19 +6,17 @@ $(function () {
         iFrame = $('#iframe'),
         musixMatchKey = '933db136de4c5690257d41e434ec1143',
         youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
-        youtubeURL = ``;
-       
+  
         
 
     // Button click event to search for tracks which also grabs the users input text value
     searchButton.click((e) => {
         e.preventDefault() 
-        const inputValue = $('#input-value').val()
-        youtubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${inputValue}l&key=${youtubeKey}`
+        const inputValue = $('#input-value').val();
 
     // Begin Youtube API    
         $.ajax({
-            url: youtubeURL,
+            url: `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${inputValue}&key=${youtubeKey}`,
             method: 'GET',
             dataType: 'json',
             data: {
@@ -30,7 +28,7 @@ $(function () {
                     videos = data.items,
                     images = data.items[0].snippet.thumbnails;
                     
-
+                    console.log(data)
                     
     
                     videos.forEach((e) => {

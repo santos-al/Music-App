@@ -3,11 +3,11 @@ $(function () {
         searchButton = $('#search'),
         lyricsText = $('#lyrics'),
         playMusicButton = $('#play-music'),
+        iFrame = $('#iframe'),
         musixMatchKey = '933db136de4c5690257d41e434ec1143',
         youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
         youtubeURL = ``;
-        // videoURL = `https://www.youtube.com/watch?v=${videoID}`,
-        // videoID = videoURL.split('=')[1];
+       
         
 
     // Button click event to search for tracks which also grabs the users input text value
@@ -29,21 +29,29 @@ $(function () {
                 const
                     videos = data.items,
                     images = data.items[0].snippet.thumbnails;
+                    
 
                     
     
                     videos.forEach((e) => {
+                        
+                        
                         $('#temp').append(`
                             <li>
+                                <a href="https://www.youtube.com/embed/${e.id.videoId}?rel=0">
                                 <img src="${e.snippet.thumbnails.default.url}">
                                     <div>
                                         <h5>${e.snippet.title}</h5>
                                         <p>${e.snippet.description}</p>
-                                    </div>    
+                                    </div>
+                                </a>    
                             </li>
                         `)
+                        // Plays 1st video from the search results
+                        iFrame.attr('src', `https://www.youtube.com/embed/${data.items[0].id.videoId}?rel=0`)
+            
                     })
-                    console.log(images)
+                    
 
             },
             error: err => console.error(err)
@@ -51,7 +59,3 @@ $(function () {
     })
 
 })
-
-
-
-

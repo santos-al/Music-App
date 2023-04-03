@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sing Along</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    </head>
-        
-    <header>
-        <div id="app-header">
-            Sing Along
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sing Along</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+
+  <header>
+    <div id="app-header">Sing Along</div>
+    <div>
+      <form>
+        <input type="text" placeholder="Search Track" name="Search" />
+        <button id="search" type="submit">Submit</button>
+      </form>
+    </div>
+  </header>
+
+  <body>
+    <div class="row">
+      <div class="col s12 m8 l9" id="left-side">
+        <label>Youtube Music Videos</label>
+        <div class="video-container">
+          <iframe
+            width="853"
+            height="480"
+            src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
         </div>
-        <div>
-            <form>
-                <input type="text" placeholder="Search Track" name="Search">
-                <button id="search" type="submit">Submit</button>
-            </form>
-        </div>
-    </header>
+      </div>
+      <div class="col s12 m4 l3" id="lyrics-area">
+        <label id="right-side">Sing along with the lyrics!</label>
+        <textarea id="lyrics">Lyrics Here....</textarea>
+      </div>
+    </div>
 
-        <body>
-            <div id="left-sdie">
-                <label>Youtube Music Videos</label>
-                <div class="video-container">
-                    <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                    
-            
-            </div>
-            <div>
-                <label id="right side">Sing along with the lyrics!</label>
-                <textarea id="lyrics">Lyrics Here....</textarea>
-            </div>
+    <div id="artist-info">
+      <text>Artist:</text>
+      <text>Album:</text>
+      <text>Genre:</text>
+      <text>Release Date:</text>
+      <text>Producers</text>
+    </div>
+  </body>
 
-            <div>
-                    <text>Artist:</text>
-                    <text>Album:</text>
-                    <text>Genre:</text>
-                    <text>Release Date:</text>
-                    <text>Producers</text>
-            </div>
-    
-        </body>
-
-    <footer>
-
-    </footer>
-
+  <footer></footer>
 </html>

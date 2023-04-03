@@ -1,3 +1,4 @@
+
 $(function () {
     const
         searchButton = $('#search'),
@@ -57,3 +58,4 @@ $(function () {
     })
 
 })
+

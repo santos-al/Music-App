@@ -1,3 +1,12 @@
+
 a {
     text-decoration: none;
 }
+=======
+:root {
+    --primary: #EFF2CF;
+    --secondary: #364156;
+    --dark: #212D40;
+    --light: #d3d3d3;
+}
+

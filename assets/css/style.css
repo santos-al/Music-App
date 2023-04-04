@@ -8,3 +8,22 @@ a {
     --dark: #212D40;
     --light: #d3d3d3;
 }
+
+header {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark);
+}
+
+header app-header {
+    color: var(--primary);
+    background-color: var(--dark);
+    padding: 20px 0 14px 37px;
+    margin: 0;
+    font-size: 48px;
+    line-height: 1;
+}
+

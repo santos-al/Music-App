@@ -8,7 +8,7 @@ $(function () {
         musixMatchKey = '933db136de4c5690257d41e434ec1143',
         youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
 
-        var commontrackId = '47305969'
+        
         var artistName = 'Adele'
         var songName = 'Hello'
         
@@ -23,24 +23,28 @@ $(function () {
         data: 'json',
         
     success: (data) => {
-        console.log(data);
-        console.log(data.message.body.track.commontrack_id);
-    },
-    error: err => console.error(err)
-    })
 
-    // Returns song lyrics using the 'common track id'
-    $.ajax({
-        url: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=${commontrackId}&apikey=${musixMatchKey}`,
-        method: 'GET',
-        dataType: 'json',
-        data: 'json',
-        
-    success: (data) => {
-        console.log(data);
-        console.log(data.message.body.lyrics.lyrics_body);
+        var commontrackId = data.message.body.track.commontrack_id;
+
+        // Returns song lyrics using the 'common track id'
+        $.ajax({
+            url: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=${commontrackId}&apikey=${musixMatchKey}`,
+            method: 'GET',
+            dataType: 'json',
+            data: 'json',
+
+        success: (data) => {
+            var songLyrics = data.message.body.lyrics.lyrics_body;
+
+            $('#lyrics').append(`<p>${songLyrics}</p>`);
+            
+
+        },
+        error: err => console.error(err)
+        })
     },
     error: err => console.error(err)
+
     })
 
 

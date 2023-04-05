@@ -1,10 +1,8 @@
-# Music-App
+# Sing Along
 
-## Project title
+## Description
 
-```
-Sing Along
-```
+We wanted users to be able to find songs and lyrics in one area and be able to sing along with the video. 
 
 ## User Story
 

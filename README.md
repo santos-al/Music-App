@@ -1,10 +1,8 @@
-# Music-App
+# Sing Along
 
-## Project title
+## Description
 
-```
-Sing Along
-```
+We wanted users to be able to find songs and lyrics in one area and be able to sing along with the video. 
 
 ## User Story
 
@@ -27,12 +25,15 @@ THEN I can play that song while looking at the lyrics
 ## APIs to be used
 
 ```
-Soundcloud
+Youtube API
 MusixMatch
 ```
 
 ## Task breakdown
 
 ```
-
+README- Team
+HTML- Team
+CSS- TEAM
+Js- Team
 ```

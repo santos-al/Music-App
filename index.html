@@ -10,42 +10,46 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css"/>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');</style>
   </head>
 
   <header>
-    <div id="app-header">Sing Along</div>
+    <div id="app-header">&#119231 &#119231 &#119231 &#119231 &#119231 Sing Along &#119231 &#119231 &#119231 &#119231 &#119231</div>
     <div>
       <form>
-
-        <input
+        <div class="row" id="search-bar">
+          <input
           id="input-value"
           type="text"
           placeholder="Search Track"
           name="Search"
-        />
-        <button id="search" type="submit">Submit</button>
+          />
+          <button class="btn waves-effect waves-light" id="search" type="submit">Search<i class="material-icons right"></i></button>
+        </div>
+        <div id="temp" class="left-align"></div>
       </form>
     </div>
   </header>
   <body>
     <div class="row">
-    <div id="temp"></div>
     <div class="col s12 m8 l9" id="left-side">
       <label>Youtube Music Videos</label>
+      <div id="youtube-box">
       <div class="video-container">
         <iframe
           id="iframe"
-          width="853"
-          height="480"
-          src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
+          width="600"
+          height="380"
+          src="https//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
           frameborder="0"
           allowfullscreen
         ></iframe>
       </div>
     </div>
+    </div>
     <div class="col s12 m4 l3" id="lyrics-area">
       <label id="right side">Sing along with the lyrics!</label>
-      <textarea id="lyrics">Lyrics Here....</textarea>
+      <textarea id="lyrics" placeholder="Lyrics will appear here!" class="flow-text"></textarea>
     </div>
   </div>
 </div>

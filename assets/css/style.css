@@ -9,6 +9,10 @@ a {
     --light: #d3d3d3;
 }
 
+.hidden{
+    display: none;
+}
+
 header {
     padding: 15px;
     display: flex;
@@ -16,14 +20,100 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: var(--dark);
+    border-top: 5px solid #EFF2CF;
+    border-bottom: 5px solid #EFF2CF;
 }
 
-header app-header {
+#app-header {
     color: var(--primary);
     background-color: var(--dark);
     padding: 20px 0 14px 37px;
     margin: 0;
-    font-size: 48px;
+    font-size: 80px;
     line-height: 1;
+    font-family: 'Monsieur La Doulaise', cursive, sans-serif;
+}
+
+#search-bar{
+    margin-bottom: 0px;
+}
+
+#input-value{
+    color: var(--dark);
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background: #EFF2CF;
+    width: 600px;
+    margin-bottom: 0px;
+}
+
+#search{
+    background: var(--primary);
+    color: var(--dark);
+    font-weight: 900;
+    margin-left: 16px;
+}
+
+#temp{
+    position: absolute;
+    z-index: 1;
+    background-color: var(--light);
+    width: 600px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#temp li{
+    border-bottom: 3px solid #a2a2a2;
+    list-style: none;
+}
+
+#temp li :hover{
+    background-color: #c4c4c2;
+    cursor: pointer;
+}
+
+#temp li a{
+    color: var(--dark);
+    display: inline-flex;
+    flex-direction: row;
+}
+
+#temp li a img{
+    padding-right: 10px;
+    height: 125px;
+}
+
+#temp li a div p{
+    display: none;
+}
+
+body{
+    background-color: var(--secondary);
+}
+
+#youtube-box{
+   padding: 150px; 
+}
+
+.video-container{
+    border: 10px solid #EFF2CF;
+    border-radius: 5px;
+}
+
+#artist-info{
+    background-color: var(--primary);
+    font-size: 20px;
+}
+
+#lyrics{
+    margin-top: 150px;
+    background-color: var(--primary);
+}
+
+h5{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark);
 }
 

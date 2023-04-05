@@ -1,14 +1,18 @@
 a {
     text-decoration: none;
 }
-
+/*Base colors used for app*/
 :root {
     --primary: #EFF2CF;
     --secondary: #364156;
     --dark: #212D40;
     --light: #d3d3d3;
 }
-
+/*Hides results of search after click*/
+.hidden{
+    display: none;
+}
+/*Style for the header*/
 header {
     padding: 15px;
     display: flex;
@@ -16,14 +20,100 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: var(--dark);
+    border-top: 5px solid var(--primary);
+    border-bottom: 5px solid var(--primary);
 }
-
-header app-header {
+/*Style for contents inside header*/
+#app-header {
     color: var(--primary);
     background-color: var(--dark);
     padding: 20px 0 14px 37px;
     margin: 0;
-    font-size: 48px;
+    font-size: 80px;
     line-height: 1;
+    font-family: 'Monsieur La Doulaise', cursive, sans-serif;
+}
+
+#search-bar{
+    margin-bottom: 0px;
+}
+/*Style for the search bar inside header*/
+#input-value{
+    color: var(--dark);
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background: var(--primary);
+    width: 600px;
+    margin-bottom: 0px;
+}
+
+#search{
+    background: var(--primary);
+    color: var(--dark);
+    font-weight: 900;
+    margin-left: 16px;
+}
+/*Style for pop up of results after user searches*/
+#temp{
+    position: absolute;
+    z-index: 1;
+    background-color: var(--light);
+    width: 600px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+/*Removes list dots on side and gives line in between search results of user search*/
+#temp li{
+    border-bottom: 3px solid #a2a2a2;
+    list-style: none;
+}
+/*Adds a hover effect and changes cursor to pointer for returned results after search*/
+#temp li :hover{
+    background-color: #c4c4c2;
+    cursor: pointer;
+}
+/*Changes color of text for results and puts image and text side by side*/
+#temp li a{
+    color: var(--dark);
+    display: inline-flex;
+    flex-direction: row;
+}
+/*Adds space between text and image for result and makes the result image look not stretched*/
+#temp li a img{
+    padding-right: 10px;
+    height: 125px;
+}
+/*Removes description of youtube link for a cleaner look*/
+#temp li a div p{
+    display: none;
+}
+/*Color for background of app*/
+body{
+    background-color: var(--secondary);
+}
+/*Makes youtube video more centered for the page*/
+#youtube-box{
+   padding: 150px; 
+}
+/*Style around video*/
+.video-container{
+    border: 10px solid var(--primary);
+    border-radius: 5px;
+}
+/*Style for bottom of page where artist, album etc. will go*/
+#artist-info{
+    background-color: var(--primary);
+    font-size: 20px;
+}
+/*Style of the lyrics box where the lyrics will be displayed. The margin help it lign up with the youtube video*/
+#lyrics{
+    margin-top: 150px;
+    background-color: var(--primary);
+}
+/*Text inside the returning results after user searches*/
+h5{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark);
 }
 

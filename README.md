@@ -27,12 +27,15 @@ THEN I can play that song while looking at the lyrics
 ## APIs to be used
 
 ```
-Soundcloud
+Youtube API
 MusixMatch
 ```
 
 ## Task breakdown
 
 ```
-
+README- Team
+HTML- Team
+CSS- TEAM
+Js- Team
 ```

@@ -100,16 +100,9 @@ $(function () {
             },
             error: err => console.error(err)
         })
-        inputValue.val('') // Optional. Clears the text value that the user inputs once they search.
+        
     })
 
-    // This is the code that hides the pop up menu as requested.
-    $('body').click((e) => {
-        
-        if ('li') {
-            $('li').hide()
-        }       
-    }) 
 
 })
 

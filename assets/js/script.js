@@ -79,6 +79,10 @@ $(function () {
             var imdbRating = data.imdbRating;
             var plot = data.Plot;
             var runTime = data.Runtime;
+            var internetMovieDatabaseRating = data.Ratings[0].Value;
+            var rottenTomatoesRating = data.Ratings[1].Value;
+            var metaCriticRating = data.Ratings[2].Value;
+
 
             console.log(data);
 
@@ -87,9 +91,13 @@ $(function () {
                 <p>Rated: ${rated}</p>
                 <p>First released on ${releaseDate}, has a runtime of ${runTime}.</p>
                 <p>Directed by ${director} and starring ${actors}</p>
-                <p>${awards}</p>
+                <p>${awards}, and a box office of ${boxOffice}</p>
                 <p>${plot}</p>
-                
+                <h4>Movie Reviews: </h4>
+                <p>Internet Movie Database: ${internetMovieDatabaseRating}</p>
+                <p>Rotten Tomatoes: ${rottenTomatoesRating}</p>
+                <p>Metacritc: ${metaCriticRating}</p>
+                <p>IMDB: ${imdbRating}</p>
             `)
       
           },

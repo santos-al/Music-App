@@ -1,39 +1,39 @@
-# Sing Along
+# Watch Party
 
 ## Description
 
-We wanted users to be able to find songs and lyrics in one area and be able to sing along with the video. 
+We wanted to provide individuals with the information regarding the movie from when it was made, awards won, and ratings from various rating agencies.
 
 ## User Story
 
 ```
-AS A music listener
-I WANT find the lyrics to my favorite songs
-SO THAT I can sing along to them
+AS A movie junkie
+I WANT find the information to my movies
+SO THAT I can make decision based of off qualitative and quantitative data.
 ```
 
 ## Acceptance Criteria
 
 ```
-GIVEN a song search input 
-WHEN I search a song name
-THEN I am given the lyrics to that song
-WHEN I have the lyrics to a song
-THEN I can play that song while looking at the lyrics
+GIVEN a movie search input
+WHEN I search a movie name
+THEN I am given the movie
+WHEN I have the infomation needed 
+THEN I can choose to watch the movie based on data
 ```
 
 ## APIs to be used
 
 ```
 Youtube API
-MusixMatch
+OMDB API
 ```
 
 ## Task breakdown
 
 ```
 README- Team
-HTML- Team
-CSS- TEAM
+HTML- Team 
+CSS- Team
 Js- Team
 ```

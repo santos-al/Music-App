@@ -11,7 +11,9 @@ $(function () {
     // Button click event to search for tracks which also grabs the users input text value
     searchButton.click((e) => {
         e.preventDefault() 
-        const inputValue = $('#input-value').val();
+        const inputValue = $('#input-value').val() + ' trailer';
+        const inputValueForOmdb = $('#input-value').val();
+        console.log(inputValue);
 
     // Begin Youtube API    
         $.ajax({
@@ -58,7 +60,7 @@ $(function () {
 
         //  Searches for a movie title and returns (Actors, Awards, Box Office, Director, Genre, Rated, Release date, IMDB rating, other ratings, plot, meta score, run time)
           $.ajax({
-              url: `http://www.omdbapi.com/?i=tt3896198&apikey=${omdbKey}&t=${inputValue}`,
+              url: `http://www.omdbapi.com/?i=tt3896198&apikey=${omdbKey}&t=${inputValueForOmdb}`,
               method: 'GET',
               dataType: 'json',
               data: 'json',
@@ -80,11 +82,14 @@ $(function () {
 
             console.log(data);
 
-            $('#lyrics').append(`
+            $('#movie-details').append(`
                 <h3>${title}</h3>
+                <p>Rated: ${rated}</p>
+                <p>First released on ${releaseDate}, has a runtime of ${runTime}.</p>
                 <p>Directed by ${director} and starring ${actors}</p>
-                <p>${title} is about ${plot}. With a run time of ${runTime}</p>
-                <p>First released on ${releaseDate}</p>
+                <p>${awards}</p>
+                <p>${plot}</p>
+                
             `)
       
           },

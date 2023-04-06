@@ -55,7 +55,8 @@ $(function () {
 
     // Button click event to search for tracks which also grabs the users input text value
     searchButton.click((e) => {
-        e.preventDefault() 
+        e.preventDefault()
+         
         const inputValue = $('#input-value').val();
 
     // Begin Youtube API    
@@ -91,6 +92,7 @@ $(function () {
                         `)
                         // Plays 1st video from the search results
                         iFrame.attr('src', `https://www.youtube.com/embed/${data.items[0].id.videoId}?rel=0`)
+
             
                     })
                     
@@ -98,8 +100,16 @@ $(function () {
             },
             error: err => console.error(err)
         })
-        
+        inputValue.val('') // Optional. Clears the text value that the user inputs once they search.
     })
+
+    // This is the code that hides the pop up menu as requested.
+    $('body').click((e) => {
+        
+        if ('li') {
+            $('li').hide()
+        }       
+    }) 
 
 })
 

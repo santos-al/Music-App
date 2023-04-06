@@ -148,3 +148,11 @@ h5{
     display: inline-block;
 }
 
+@media screen and (max-width: 768px) {
+    header,
+    body,
+    footer {
+      flex-direction: column;
+    }
+  }
+  

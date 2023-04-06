@@ -116,4 +116,11 @@ h5{
     font-weight: bold;
     color: var(--dark);
 }
-
+@media screen and (max-width: 768px) {
+    header,
+    body,
+    footer {
+      flex-direction: column;
+    }
+  }
+  

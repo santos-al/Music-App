@@ -116,6 +116,38 @@ h5{
     font-weight: bold;
     color: var(--dark);
 }
+
+.footer-links {
+    padding: 40px 0;
+    background-color: var(--dark);
+    color: var(--primary);
+}
+
+.footer-links .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer-links .social > a {
+    font-size: 25px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid var(--light);
+    margin: 0 8px;
+    color: inherit;
+}
+
+.footer-links .social .icon-img {
+    min-height: 100pxx;
+    max-height: 100px;
+    padding: 15px;
+    display: inline-block;
+}
+
 @media screen and (max-width: 768px) {
     header,
     body,

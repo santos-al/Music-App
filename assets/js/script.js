@@ -5,7 +5,7 @@ $(function () {
         lyricsText = $('#lyrics'),
         playMusicButton = $('#play-music'),
         iFrame = $('#iframe'),
-        musixMatchKey = '933db136de4c5690257d41e434ec1143',
+        omdbKey = '30150689'
         youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
 
         
@@ -75,13 +75,14 @@ $(function () {
                     
                     console.log(data)
                     
-    
+                    $(".search-element").remove();
+                        $("#temp").removeClass("hidden");
                     videos.forEach((e) => {
                         
                         
                         $('#temp').append(`
-                            <li>
-                                <a href="https://www.youtube.com/embed/${e.id.videoId}?rel=0">
+                            <li class="search-element">
+                            <a>
                                 <img src="${e.snippet.thumbnails.default.url}">
                                     <div>
                                         <h5>${e.snippet.title}</h5>
@@ -99,10 +100,49 @@ $(function () {
 
             },
             error: err => console.error(err)
-        })
-        
+        });
+
+
+        //  Searches for a movie title and returns (Actors, Awards, Box Office, Director, Genre, Rated, Release date, IMDB rating, other ratings, plot, meta score, run time)
+          $.ajax({
+              url: `http://www.omdbapi.com/?i=tt3896198&apikey=${omdbKey}&t=${inputValue}`,
+              method: 'GET',
+              dataType: 'json',
+              data: 'json',
+
+          success: (data) => {
+
+            // Variables to display on the pag
+            var title = data.Title;
+            var actors = data.Actors;
+            var releaseDate = data.Released;
+            var awards = data.Awards;
+            var boxOffice = data.BoxOffice;
+            var director = data.Director;
+            var genre = data.Genre;
+            var rated = data.Rated;
+            var imdbRating = data.imdbRating;
+            var plot = data.Plot;
+            var runTime = data.Runtime;
+
+            console.log(data);
+
+            $('#lyrics').append(`
+                <h3>${title}</h3>
+                <p>Directed by ${director} and starring ${actors}</p>
+                <p>${title} is about ${plot}. With a run time of ${runTime}</p>
+                <p>First released on ${releaseDate}</p>
+            `)
+      
+          },
+          error: err => console.error(err)
+
+          })
     })
-
-
+    $(document).click((e) => {
+        if ($(e.target).is("#search")) {
+            return;
+        }
+        $("#temp").addClass("hidden");
+    });
 })
-

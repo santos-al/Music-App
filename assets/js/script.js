@@ -5,7 +5,7 @@ $(function () {
         lyricsText = $('#lyrics'),
         playMusicButton = $('#play-music'),
         iFrame = $('#iframe'),
-        musixMatchKey = '933db136de4c5690257d41e434ec1143',
+        omdbKey = '30150689'
         youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
 
     // Button click event to search for tracks which also grabs the users input text value
@@ -54,48 +54,41 @@ $(function () {
             },
             error: err => console.error(err)
         });
-        $(document).click((e) => {
-            if ($(e.target).is("#search")) {
-                return;
-            }
-            $("#temp").addClass("hidden");
-        });
 
-            // temporary variable until search by artist is available
-            var artistName = 'Adele'
 
-          // Searches for a song using the artist and song name and returns a the 'common track id'
+        //  Searches for a movie title and returns (Actors, Awards, Box Office, Director, Genre, Rated, Release date, IMDB rating, other ratings, plot, meta score, run time)
           $.ajax({
-              url: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/matcher.track.get?q_artist=${artistName}&q_track=${inputValue}&apikey=${musixMatchKey}`,
+              url: `http://www.omdbapi.com/?i=tt3896198&apikey=${omdbKey}&t=${inputValue}`,
               method: 'GET',
               dataType: 'json',
               data: 'json',
 
           success: (data) => {
 
-              var commontrackId = data.message.body.track.commontrack_id;
+            // Variables to display on the pag
+            var title = data.Title;
+            var actors = data.Actors;
+            var releaseDate = data.Released;
+            var awards = data.Awards;
+            var boxOffice = data.BoxOffice;
+            var director = data.Director;
+            var genre = data.Genre;
+            var rated = data.Rated;
+            var imdbRating = data.imdbRating;
+            var plot = data.Plot;
+            var runtime = data.Runtime;
 
-              // Returns song lyrics using the 'common track id'
-              $.ajax({
-                  url: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=${commontrackId}&apikey=${musixMatchKey}`,
-                  method: 'GET',
-                  dataType: 'json',
-                  data: 'json',
-
-              success: (data) => {
-                  var songLyrics = data.message.body.lyrics.lyrics_body;
-
-                  $('#lyrics').append(`<p>${songLyrics}</p>`);
-
-
-              },
-              error: err => console.error(err)
-              })
+            console.log(data);
+      
           },
           error: err => console.error(err)
-      
-          })
 
           })
-
+    })
+    $(document).click((e) => {
+        if ($(e.target).is("#search")) {
+            return;
+        }
+        $("#temp").addClass("hidden");
+    });
 })

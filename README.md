@@ -9,7 +9,7 @@ We wanted to provide individuals with the information regarding the movie from w
 ```
 AS A movie junkie
 I WANT find the information to my movies
-SO THAT I can make decision.
+SO THAT I can make decision based of off qualitative and quantitative data.
 ```
 
 ## Acceptance Criteria

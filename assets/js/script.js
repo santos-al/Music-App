@@ -29,13 +29,14 @@ $(function () {
                     
                     console.log(data)
                     
-    
+                    $(".search-element").remove();
+                        $("#temp").removeClass("hidden");
                     videos.forEach((e) => {
                         
                         
                         $('#temp').append(`
-                            <li>
-                                <a href="https://www.youtube.com/embed/${e.id.videoId}?rel=0">
+                            <li class="search-element">
+                            <a>
                                 <img src="${e.snippet.thumbnails.default.url}">
                                     <div>
                                         <h5>${e.snippet.title}</h5>
@@ -52,7 +53,13 @@ $(function () {
 
             },
             error: err => console.error(err)
-        })
+        });
+        $(document).click((e) => {
+            if ($(e.target).is("#search")) {
+                return;
+            }
+            $("#temp").addClass("hidden");
+        });
 
             // temporary variable until search by artist is available
             var artistName = 'Adele'
@@ -92,4 +99,3 @@ $(function () {
           })
 
 })
-

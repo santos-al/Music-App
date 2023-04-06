@@ -65,7 +65,7 @@ $(function () {
               data: 'json',
 
           success: (data) => {
-
+    
             // Variables to display on the pag
             var title = data.Title;
             var actors = data.Actors;
@@ -81,7 +81,6 @@ $(function () {
             var internetMovieDatabaseRating = data.Ratings[0].Value;
             var rottenTomatoesRating = data.Ratings[1].Value;
             var metaCriticRating = data.Ratings[2].Value;
-
 
             console.log(data);
 

@@ -2,8 +2,7 @@
 $(function () {
     const
         searchButton = $('#search'),
-        lyricsText = $('#lyrics'),
-        playMusicButton = $('#play-music'),
+        movieDetails = $('#movie-details')
         iFrame = $('#iframe'),
         omdbKey = '30150689'
         youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
@@ -86,7 +85,7 @@ $(function () {
 
             console.log(data);
 
-            $('#movie-details').append(`
+            $(movieDetails).append(`
                 <h3>${title}</h3>
                 <p>Rated: ${rated}</p>
                 <p>First released on ${releaseDate}, has a runtime of ${runTime}.</p>

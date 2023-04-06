@@ -76,9 +76,16 @@ $(function () {
             var rated = data.Rated;
             var imdbRating = data.imdbRating;
             var plot = data.Plot;
-            var runtime = data.Runtime;
+            var runTime = data.Runtime;
 
             console.log(data);
+
+            $('#lyrics').append(`
+                <h3>${title}</h3>
+                <p>Directed by ${director} and starring ${actors}</p>
+                <p>${title} is about ${plot}. With a run time of ${runTime}</p>
+                <p>First released on ${releaseDate}</p>
+            `)
       
           },
           error: err => console.error(err)

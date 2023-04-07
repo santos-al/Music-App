@@ -84,9 +84,12 @@ $(function () {
             var rottenTomatoesRating = data.Ratings[1].Value;
             var metaCriticRating = data.Ratings[2].Value;
 
-            console.log(data);
+            movieDetails.html('') // Resets previous movie details
+            
+            
 
-            $(movieDetails).append(`
+            $(movieDetails).html(`
+    
                 <h3>${title}</h3>
                 <p>Rated: ${rated}</p>
                 <p>First released on ${releaseDate}, has a runtime of ${runTime}.</p>
@@ -103,8 +106,10 @@ $(function () {
           },
           error: err => console.error(err)
 
+
           })
     })
+    
     $(document).click((e) => {
         if ($(e.target).is("#search")) {
             return;

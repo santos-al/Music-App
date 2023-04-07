@@ -80,7 +80,6 @@ $(function () {
             var imdbRating = data.imdbRating;
             var plot = data.Plot;
             var runTime = data.Runtime;
-            var internetMovieDatabaseRating = data.Ratings[0].Value;
             var rottenTomatoesRating = data.Ratings[1].Value;
             var metaCriticRating = data.Ratings[2].Value;
 
@@ -97,7 +96,6 @@ $(function () {
                 <p>${awards}, and a box office of ${boxOffice}</p>
                 <p>${plot}</p>
                 <h4>Movie Reviews: </h4>
-                <p>Internet Movie Database: ${internetMovieDatabaseRating}</p>
                 <p>Rotten Tomatoes: ${rottenTomatoesRating}</p>
                 <p>Metacritc: ${metaCriticRating}</p>
                 <p>IMDB: ${imdbRating}</p>

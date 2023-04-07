@@ -7,6 +7,51 @@ $(function () {
         omdbKey = '30150689'
         youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
 
+        
+        var artistName = 'Adele'
+        var songName = 'Hello'
+        
+        
+
+
+    // Searches for a song using the artist and song name and returns a the 'common track id'
+    $.ajax({
+        url: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/matcher.track.get?q_artist=${artistName}&q_track=${songName}&apikey=${musixMatchKey}`,
+        method: 'GET',
+        dataType: 'json',
+        data: 'json',
+        
+    success: (data) => {
+
+        var commontrackId = data.message.body.track.commontrack_id;
+
+        // Returns song lyrics using the 'common track id'
+        $.ajax({
+            url: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=${commontrackId}&apikey=${musixMatchKey}`,
+            method: 'GET',
+            dataType: 'json',
+            data: 'json',
+
+        success: (data) => {
+            var songLyrics = data.message.body.lyrics.lyrics_body;
+
+            $('#lyrics').append(`<p>${songLyrics}</p>`);
+            
+
+        },
+        error: err => console.error(err)
+        })
+    },
+    error: err => console.error(err)
+
+    })
+
+
+
+
+
+
+
     // Button click event to search for tracks which also grabs the users input text value
     searchButton.click((e) => {
         e.preventDefault() 
@@ -48,11 +93,12 @@ $(function () {
                         `)
                         // Plays 1st video from the search results
                         iFrame.attr('src', `https://www.youtube.com/embed/${data.items[0].id.videoId}?rel=0`)
+
             
                     })
                     
 
-                    
+
             },
             error: err => console.error(err)
         });

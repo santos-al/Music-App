@@ -2,62 +2,17 @@
 $(function () {
     const
         searchButton = $('#search'),
-        lyricsText = $('#lyrics'),
-        playMusicButton = $('#play-music'),
+        movieDetails = $('#movie-details')
         iFrame = $('#iframe'),
         omdbKey = '30150689'
         youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
 
-        
-        var artistName = 'Adele'
-        var songName = 'Hello'
-        
-        
-
-
-    // Searches for a song using the artist and song name and returns a the 'common track id'
-    $.ajax({
-        url: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/matcher.track.get?q_artist=${artistName}&q_track=${songName}&apikey=${musixMatchKey}`,
-        method: 'GET',
-        dataType: 'json',
-        data: 'json',
-        
-    success: (data) => {
-
-        var commontrackId = data.message.body.track.commontrack_id;
-
-        // Returns song lyrics using the 'common track id'
-        $.ajax({
-            url: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=${commontrackId}&apikey=${musixMatchKey}`,
-            method: 'GET',
-            dataType: 'json',
-            data: 'json',
-
-        success: (data) => {
-            var songLyrics = data.message.body.lyrics.lyrics_body;
-
-            $('#lyrics').append(`<p>${songLyrics}</p>`);
-            
-
-        },
-        error: err => console.error(err)
-        })
-    },
-    error: err => console.error(err)
-
-    })
-
-
-
-
-
-
-
     // Button click event to search for tracks which also grabs the users input text value
     searchButton.click((e) => {
-        e.preventDefault()
-         
-        const inputValue = $('#input-value').val();
+        e.preventDefault() 
+        const inputValue = $('#input-value').val() + ' trailer';
+        const inputValueForOmdb = $('#input-value').val();
+        console.log(inputValue);
 
     // Begin Youtube API    
         $.ajax({
@@ -98,6 +53,7 @@ $(function () {
                     })
                     
 
+
             },
             error: err => console.error(err)
         });
@@ -105,13 +61,13 @@ $(function () {
 
         //  Searches for a movie title and returns (Actors, Awards, Box Office, Director, Genre, Rated, Release date, IMDB rating, other ratings, plot, meta score, run time)
           $.ajax({
-              url: `http://www.omdbapi.com/?i=tt3896198&apikey=${omdbKey}&t=${inputValue}`,
+              url: `http://www.omdbapi.com/?i=tt3896198&apikey=${omdbKey}&t=${inputValueForOmdb}`,
               method: 'GET',
               dataType: 'json',
               data: 'json',
 
           success: (data) => {
-
+    
             // Variables to display on the pag
             var title = data.Title;
             var actors = data.Actors;
@@ -124,21 +80,36 @@ $(function () {
             var imdbRating = data.imdbRating;
             var plot = data.Plot;
             var runTime = data.Runtime;
+            var internetMovieDatabaseRating = data.Ratings[0].Value;
+            var rottenTomatoesRating = data.Ratings[1].Value;
+            var metaCriticRating = data.Ratings[2].Value;
 
-            console.log(data);
+            movieDetails.html('') // Resets previous movie details
+            
+            
 
-            $('#lyrics').append(`
+            $(movieDetails).html(`
+    
                 <h3>${title}</h3>
+                <p>Rated: ${rated}</p>
+                <p>First released on ${releaseDate}, has a runtime of ${runTime}.</p>
                 <p>Directed by ${director} and starring ${actors}</p>
-                <p>${title} is about ${plot}. With a run time of ${runTime}</p>
-                <p>First released on ${releaseDate}</p>
+                <p>${awards}, and a box office of ${boxOffice}</p>
+                <p>${plot}</p>
+                <h4>Movie Reviews: </h4>
+                <p>Internet Movie Database: ${internetMovieDatabaseRating}</p>
+                <p>Rotten Tomatoes: ${rottenTomatoesRating}</p>
+                <p>Metacritc: ${metaCriticRating}</p>
+                <p>IMDB: ${imdbRating}</p>
             `)
       
           },
           error: err => console.error(err)
 
+
           })
     })
+    
     $(document).click((e) => {
         if ($(e.target).is("#search")) {
             return;

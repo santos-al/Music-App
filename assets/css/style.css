@@ -106,7 +106,7 @@ body{
     font-size: 20px;
 }
 /*Style of the lyrics box where the lyrics will be displayed. The margin help it lign up with the youtube video*/
-#lyrics{
+#movie-details{
     margin-top: 150px;
     background-color: var(--primary);
 }

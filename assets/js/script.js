@@ -89,16 +89,16 @@ $(function () {
 
             $(movieDetails).html(`
     
-                <h3>${title}</h3>
-                <p>Rated: ${rated}</p>
-                <p>First released on ${releaseDate}, has a runtime of ${runTime}.</p>
-                <p>Directed by ${director} and starring ${actors}</p>
-                <p>${awards}, and a box office of ${boxOffice}</p>
-                <p>${plot}</p>
-                <h4>Movie Reviews: </h4>
-                <p>Rotten Tomatoes: ${rottenTomatoesRating}</p>
-                <p>Metacritc: ${metaCriticRating}</p>
-                <p>IMDB: ${imdbRating}</p>
+                <h3 id="movieTitle">${title}</h3>
+                <p class="movieDetailsText">Rated: ${rated}</p>
+                <p class="movieDetailsText">First released on ${releaseDate}, ${title} has a runtime of ${runTime}.</p>
+                <p class="movieDetailsText">Directed by ${director} and starring ${actors}</p>
+                <p class="movieDetailsText">${awards}, and a box office of ${boxOffice}</p>
+                <p class="movieDetailsText">${plot}</p>
+                <h4 id="movieReviews">Movie Reviews: </h4>
+                <p class="movieDetailsText">Rotten Tomatoes: ${rottenTomatoesRating}</p>
+                <p class="movieDetailsText">Metacritc: ${metaCriticRating}</p>
+                <p class="movieDetailsText">IMDB: ${imdbRating}</p>
             `)
       
           },

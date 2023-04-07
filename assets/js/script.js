@@ -5,8 +5,7 @@ $(function () {
         movieDetails = $('#movie-details')
         iFrame = $('#iframe'),
         omdbKey = '30150689'
-        //youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
-        youtubeKey = 'AIzaSyCYAzQk8etQAR_ujP4OYqmtY6UIQDQ4Tq4';
+        youtubeKey = 'AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8';
 
     // Button click event to search for tracks which also grabs the users input text value
     searchButton.click((e) => {

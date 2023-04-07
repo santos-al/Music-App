@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sing Along</title>
+    <title>Watch Party</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -14,26 +14,21 @@
   </head>
 
   <header>
+    <div id="header-size">
     <div id="app-header">Watch Party</div>
-    <div>
-      <form>
-        <div class="row" id="search-bar">
-          <input
-          id="input-value"
-          type="text"
-          placeholder="Search Trailer"
-          name="Search"
-          />
+    <div id="search-bar-container">
+        <div id="search-bar">
+          <input id="input-value" type="text" placeholder="Search Trailer" name="Search"/>
           <button class="btn waves-effect waves-light" id="search" type="submit">Search<i class="material-icons right"></i></button>
         </div>
         <div id="temp" class="left-align"></div>
-      </form>
     </div>
+  </div>
   </header>
   <body>
     <div class="row">
     <div class="col s12 m8 l9" id="left-side">
-      <label>Youtube Music Videos</label>
+      <label>Youtube Trailer</label>
       <div id="youtube-box">
       <div class="video-container">
         <iframe
@@ -62,14 +57,14 @@
     ></script>
     <script src="assets/js/script.js"></script>
 
-    <div class="footer-links">
-      <footer>
+    <footer>
+        <div class="footer-links">
         <div class="social">
           <a href="https://www.instagram.com/rutgers_watch_party/"><img src="assets/images/insta.png" alt="Instagram" class="icon-img"></a>
           <a href="tel:+18488675309"><img src="assets/images/phone-icon-old-phone-telephone-icon-9.png" alt="Phone" class="icon-img"></a>
           <a href="https://github.com/santos-al/Music-App"><img src="assets/images/2504911.png" alt="Github" class="icon-img"></a>
         </div>
+      </div>
       </footer>
-    </div>
   </body>
 </html>

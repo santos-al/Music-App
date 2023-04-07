@@ -31,7 +31,7 @@ header {
     margin: 0;
     font-size: 80px;
     line-height: 1;
-    font-family: 'Monsieur La Doulaise', cursive, sans-serif;
+    font-family: 'Righteous', cursive, sans-serif;
 }
 
 #search-bar{
@@ -91,10 +91,6 @@ header {
 body{
     background-color: var(--secondary);
 }
-/*Makes youtube video more centered for the page*/
-#youtube-box{
-   padding: 150px; 
-}
 /*Style around video*/
 .video-container{
     border: 10px solid var(--primary);
@@ -107,7 +103,6 @@ body{
 }
 /*Style of the lyrics box where the lyrics will be displayed. The margin help it lign up with the youtube video*/
 #movie-details{
-    margin-top: 150px;
     background-color: var(--primary);
 }
 /*Text inside the returning results after user searches*/

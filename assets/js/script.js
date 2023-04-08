@@ -12,7 +12,7 @@ $(function () {
         e.preventDefault() 
         const inputValue = $('#input-value').val() + ' trailer';
         const inputValueForOmdb = $('#input-value').val();
-        console.log(inputValue);
+        
 
     // Begin Youtube API    
         $.ajax({
@@ -28,15 +28,18 @@ $(function () {
                     videos = data.items,
                     images = data.items[0].snippet.thumbnails;
                     
-                    console.log(data)
+
+
+                 
                     
                     $(".search-element").remove();
-                        $("#temp").removeClass("hidden");
+                    $("#temp").removeClass("hidden");
                     videos.forEach((e) => {
                         
-                        
+                        const videoId = e.id.videoId;
+
                         $('#temp').append(`
-                            <li class="search-element">
+                            <li class="search-element" data-video-id="${videoId}">
                             <a>
                                 <img src="${e.snippet.thumbnails.default.url}">
                                     <div>
@@ -46,13 +49,14 @@ $(function () {
                                 </a>    
                             </li>
                         `)
+                        // This allows you to click on a video in the list so it gets sent into the iFrame
+                        $(`[data-video-id="${videoId}"]`).click(() => {
+                            iFrame.attr('src', `https://www.youtube.com/embed/${videoId}?rel=0`);
+                          });
+                    
+                        })
                         // Plays 1st video from the search results
                         iFrame.attr('src', `https://www.youtube.com/embed/${data.items[0].id.videoId}?rel=0`)
-
-            
-                    })
-                    
-
 
             },
             error: err => console.error(err)

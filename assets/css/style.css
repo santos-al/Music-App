@@ -37,7 +37,7 @@ header {
 /*Search bar visuals*/
 #search-bar-container {
   display: inline-flex;
-  min-width: 600px;
+  min-width: 800px;
   justify-content: right;
   align-items: center;
 }
@@ -79,7 +79,7 @@ header {
   margin-right: 123px;
 }
 /*Removes list dots on side and gives line in between search results of user search*/
-#temp li {
+#temp li, #history-list li {
   border-bottom: 3px solid #a2a2a2;
   list-style: none;
   overflow: hidden;
@@ -91,13 +91,15 @@ header {
   cursor: pointer;
 }
 /*Changes color of text for results and puts image and text side by side*/
-#temp li a {
+#temp li a,
+#history-list li a {
   color: var(--dark);
   display: inline-flex;
   flex-direction: row;
 }
 /*Adds space between text and image for result and makes the result image look not stretched*/
-#temp li a img {
+#temp li a img,
+#history-list li a img {
   padding-right: 10px;
   height: 125px;
 }
@@ -184,6 +186,40 @@ footer {
   padding: 15px;
   display: inline-block;
 }
+
+#history {
+  margin-right: 16px;
+  background: var(--primary);
+  color: var(--dark);
+  font-weight: 900;
+}
+
+#history-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background-color: var(--light);
+    border-radius: 5px;
+    font-size: 24px;
+    text-align: center;
+    overflow: scroll;
+}
+
+#close-modal {
+  background: var(--primary);
+  color: var(--dark);
+  font-weight: 900;
+  width: 300px;
+}
+
+#previous-trailers {
+  background: var(--primary);
+  color: var(--dark);
+  padding: 12px;
+}
 /*Makes site responsive*/
 @media screen and (max-width: 900px) {
   header,
@@ -222,5 +258,9 @@ footer {
     position: relative;
     width: 100%;
     margin: 0px;
+  }
+
+  #history {
+    display: none;
   }
 }

@@ -3,6 +3,8 @@ $(function () {
     movieDetails = $("#movie-details"),
     iFrame = $("#iframe"),
     textInput = $("#input-value"),
+    viewHistoryBtn = $('#history'),
+    closeModalBtn = $('#close-modal'),
     omdbKey = "30150689",
     youtubeKey = "AIzaSyBVQsjnNwpI-fOih0uJq-n1KCb1WJTvmh8";
 
@@ -35,8 +37,16 @@ $(function () {
 
   $(document).click((e) => {
     if ($(e.target).is("#search")) {
+      $('#history-modal').addClass("hidden");
       return;
     }
+
+    if ($(e.target).is("#history")) {
+      $("#temp").addClass("hidden");
+      return;
+    }
+    
+    $('#history-modal').addClass("hidden");
     $("#temp").addClass("hidden");
   });
 
@@ -134,7 +144,46 @@ $(function () {
       // This allows you to click on a video in the list so it gets sent into the iFrame
       $(`[data-video-id="${videoId}"]`).click(() => {
         iFrame.attr("src", `https://www.youtube.com/embed/${videoId}?rel=0`);
+
+        // add to local storage
+        var video = {
+          title: e.snippet.title,
+          image: e.snippet.thumbnails.default.url,
+          videoId: videoId,
+        };
+        var currentStorage = JSON.parse(localStorage.getItem("video-history"));
+        var combinedStorage = currentStorage === null ? [video] : currentStorage.concat(video);
+        localStorage.setItem("video-history", JSON.stringify(combinedStorage));
       });
     });
   }
+
+  viewHistoryBtn.click((e) => {
+    $('#history-modal').removeClass("hidden");
+    $('#history-list').html(""); // reset contents
+    // get previous trailers
+    const history = JSON.parse(localStorage.getItem("video-history"));
+    if(history !== null){
+      for(let i = 0; i < history.length; i++){
+        const video = history[i];
+        $("#history-list").append(`
+        <li class="search-element" data-history-video-id="${video.videoId}">
+        <a>
+            <img src="${video.image}">
+                <div>
+                    <h5>${video.title}</h5>
+                </div>
+            </a>    
+        </li>
+    `);
+      }
+    } else {
+      $('#history-list').append('<div>No videos in your search history</div>');
+    }
+
+  });
+
+  closeModalBtn.click((e) => {
+    $('#history-modal').addClass("hidden");
+  });
 });

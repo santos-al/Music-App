@@ -12,6 +12,10 @@ I WANT find the information to my movies
 SO THAT I can make decision based of off qualitative and quantitative data.
 ```
 
+## Screenshot
+
+![Screenshot of app](assets/images/WPScreenshot.png)
+
 ## Acceptance Criteria
 
 ```

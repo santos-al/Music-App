@@ -11,7 +11,9 @@ AS A movie junkie
 I WANT find the information to my movies
 SO THAT I can make decision based of off qualitative and quantitative data.
 ```
-
+## Links
+GitHub Repo - https://github.com/santos-al/Watch-Party
+Website - https://santos-al.github.io/Watch-Party/
 ## Screenshot
 
 ![Screenshot of app](assets/images/WPScreenshot.png)

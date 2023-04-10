@@ -1,228 +1,226 @@
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 /*Base colors used for app*/
 :root {
-    --primary: #EFF2CF;
-    --secondary: #364156;
-    --dark: #212D40;
-    --light: #d3d3d3;
+  --primary: #eff2cf;
+  --secondary: #364156;
+  --dark: #212d40;
+  --light: #d3d3d3;
 }
 /*Hides results of search after click*/
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 /*Style for the header*/
 header {
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--dark);
-    border-top: 5px solid var(--primary);
-    border-bottom: 5px solid var(--primary);
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark);
+  border-top: 5px solid var(--primary);
+  border-bottom: 5px solid var(--primary);
 }
 /*Style for contents inside header*/
 #app-header {
-    color: var(--primary);
-    background-color: var(--dark);
-    padding: 20px 0 14px 37px;
-    margin: 0;
-    font-size: 80px;
-    line-height: 1;
-    font-family: 'Righteous', cursive, sans-serif;
-    width: 75%;
+  color: var(--primary);
+  background-color: var(--dark);
+  padding: 20px 0 14px 37px;
+  margin: 0;
+  font-size: 80px;
+  line-height: 1;
+  font-family: "Righteous", cursive, sans-serif;
+  width: 75%;
 }
 /*Search bar visuals*/
-#search-bar-container{
-    display: inline-flex;
-    min-width: 600px;
-    justify-content: right;
-    align-items: center;
+#search-bar-container {
+  display: inline-flex;
+  min-width: 600px;
+  justify-content: right;
+  align-items: center;
 }
 
-#header-size{
-    width: 100%;
-    display: inline-flex;
+#header-size {
+  width: 100%;
+  display: inline-flex;
 }
 
-#search-bar{
-    margin-bottom: 0px;
+#search-bar {
+  margin-bottom: 0px;
 }
 /*Style for the search bar inside header*/
-#input-value{
-    color: var(--dark);
-    border: 1px solid #FFFFFF;
-    border-radius: 5px;
-    background: var(--primary);
-    margin-bottom: 0px;
-    width: 400px;
+#input-value {
+  color: var(--dark);
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background: var(--primary);
+  margin-bottom: 0px;
+  width: 400px;
 }
 
-#search{
-    background: var(--primary);
-    color: var(--dark);
-    font-weight: 900;
-    margin-left: 16px;
-    width: 100px;
+#search {
+  background: var(--primary);
+  color: var(--dark);
+  font-weight: 900;
+  margin-left: 16px;
+  width: 100px;
 }
 /*Style for pop up of results after user searches*/
-#temp{
-    position: absolute;
-    z-index: 1;
-    background-color: var(--light);
-    border-radius: 5px;
-    overflow: hidden;
-    width: 400px;
-    margin-top: 723px;
-    margin-right: 123px;
+#temp {
+  position: absolute;
+  z-index: 1;
+  background-color: var(--light);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 400px;
+  margin-top: 723px;
+  margin-right: 123px;
 }
 /*Removes list dots on side and gives line in between search results of user search*/
-#temp li{
-    border-bottom: 3px solid #a2a2a2;
-    list-style: none;
-    overflow: hidden;
-    max-height: 135px;
+#temp li {
+  border-bottom: 3px solid #a2a2a2;
+  list-style: none;
+  overflow: hidden;
+  max-height: 135px;
 }
 /*Adds a hover effect and changes cursor to pointer for returned results after search*/
-#temp li :hover{
-    background-color: #c4c4c2;
-    cursor: pointer;
+#temp li :hover {
+  background-color: #c4c4c2;
+  cursor: pointer;
 }
 /*Changes color of text for results and puts image and text side by side*/
-#temp li a{
-    color: var(--dark);
-    display: inline-flex;
-    flex-direction: row;
+#temp li a {
+  color: var(--dark);
+  display: inline-flex;
+  flex-direction: row;
 }
 /*Adds space between text and image for result and makes the result image look not stretched*/
-#temp li a img{
-    padding-right: 10px;
-    height: 125px;
+#temp li a img {
+  padding-right: 10px;
+  height: 125px;
 }
 /*Removes description of youtube link for a cleaner look*/
-#temp li a div p{
-    display: none;
+#temp li a div p {
+  display: none;
 }
 /*Color for background of app*/
-body{
-    background-color: var(--secondary);
+body {
+  background-color: var(--secondary);
 }
 /*Style around video*/
-.video-container{
-    border: 10px solid var(--primary);
-    border-radius: 5px;
+.video-container {
+  border: 10px solid var(--primary);
+  border-radius: 5px;
 }
-/*Style of the lyrics box where the lyrics will be displayed.*/
-#movie-details{
-    border: 10px solid var(--dark);
-    border-style: outset;
-    background: var(--dark);
-    color: var(--primary);
-    border-radius: 5px;
+/*Style of the movie details container.*/
+#movie-details {
+  border: 10px solid var(--dark);
+  border-style: outset;
+  background: var(--dark);
+  color: var(--primary);
+  border-radius: 5px;
 }
 /*Style for Movie title in movie details*/
-#movieTitle{
-    font-weight: 900;
-    font-family: 'Righteous', cursive, sans-serif;
-    text-align: center;
-    text-decoration: underline;
+#movieTitle {
+  font-weight: 900;
+  font-family: "Righteous", cursive, sans-serif;
+  text-align: center;
+  text-decoration: underline;
 }
 /*Style for text in movie details */
-.movieDetailsText{
-    font-size: 24px;
-    text-align: center;
-    font-family: math, sans-serif;
+.movieDetailsText {
+  font-size: 24px;
+  text-align: center;
+  font-family: math, sans-serif;
 }
 /*Style for review header in movie details*/
-#movieReviews{
-    font-family: 'Righteous', cursive, sans-serif;
-    text-align: center;
-    text-decoration: underline;
+#movieReviews {
+  font-family: "Righteous", cursive, sans-serif;
+  text-align: center;
+  text-decoration: underline;
 }
 
 /*Text inside the returning results after user searches*/
-h5{
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--dark);
+h5 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--dark);
 }
 /*Footer style*/
-footer{
-    border-top: 5px solid var(--primary);
-    margin-top: 64px;
+footer {
+  border-top: 5px solid var(--primary);
+  margin-top: 64px;
 }
 
 .footer-links {
-    padding: 40px 0;
-    background-color: var(--dark);
-    color: var(--primary);
+  padding: 40px 0;
+  background-color: var(--dark);
+  color: var(--primary);
 }
 
 .footer-links .social {
-    text-align: center;
-    padding-bottom: 25px;
+  text-align: center;
+  padding-bottom: 25px;
 }
 
 .footer-links .social > a {
-    font-size: 25px;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    border: 1px solid var(--light);
-    margin: 0 8px;
-    color: inherit;
+  font-size: 25px;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid var(--light);
+  margin: 0 8px;
+  color: inherit;
 }
 
 .footer-links .social .icon-img {
-    min-height: 100px;
-    max-height: 100px;
-    padding: 15px;
-    display: inline-block;
+  min-height: 100px;
+  max-height: 100px;
+  padding: 15px;
+  display: inline-block;
 }
 /*Makes site responsive*/
 @media screen and (max-width: 900px) {
-    header,
-    body,
-    footer{
-      flex-direction: column;
-    }
-
-    #header-size {
-        display: block;
-    }
-
-    #app-header {
-        text-align: center;
-        width: 100%;
-        padding-left: 0px;
-    }
-
-    #search-bar-container {
-        width: 100%;
-        justify-content: center;
-        margin: auto;
-        min-width: 0px;
-        display: block;
-    }
-
-    #search-bar {
-        width: 100%;
-    }
-
-    #input-value{
-        width: 330px;
-    }
-
-    #temp {
-        position: relative;
-        width: 100%;
-        margin: 0px;
-    }
+  header,
+  body,
+  footer {
+    flex-direction: column;
   }
-  
-  
+
+  #header-size {
+    display: block;
+  }
+
+  #app-header {
+    text-align: center;
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  #search-bar-container {
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+    min-width: 0px;
+    display: block;
+  }
+
+  #search-bar {
+    width: 100%;
+  }
+
+  #input-value {
+    width: 330px;
+  }
+
+  #temp {
+    position: relative;
+    width: 100%;
+    margin: 0px;
+  }
+}

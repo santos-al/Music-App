@@ -23,6 +23,7 @@
         <div id="app-header">Watch Party</div>
         <div id="search-bar-container">
           <div id="search-bar">
+            <button id="history" class="btn waves-effect waves-light history-btn">View Previous Trailers</button>
             <input
               id="input-value"
               type="text"
@@ -66,6 +67,11 @@
       </div>
     </div>
 
+    <div id="history-modal" class="hidden">
+      <div id="previous-trailers">Your Previous Trailers:</div>
+      <div id="history-list"></div>
+      <button id="close-modal" class="btn waves-effect waves-light">Close</button>
+    </div>
     <!--Footer: contains social links-->
     <footer>
       <div class="footer-links">

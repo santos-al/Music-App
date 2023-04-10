@@ -45,7 +45,7 @@ $(function () {
       $("#temp").addClass("hidden");
       return;
     }
-    
+
     $('#history-modal').addClass("hidden");
     $("#temp").addClass("hidden");
   });
@@ -83,7 +83,7 @@ $(function () {
 
     //  Searches for a movie title and returns (Actors, Awards, Box Office, Director, Genre, Rated, Release date, IMDB rating, other ratings, plot, meta score, run time)
     $.ajax({
-      url: `http://www.omdbapi.com/?i=tt3896198&apikey=${omdbKey}&t=${inputValueForOmdb}`,
+      url: `https://www.omdbapi.com/?i=tt3896198&apikey=${omdbKey}&t=${inputValueForOmdb}`,
       method: "GET",
       dataType: "json",
       data: "json",
